@@ -27,8 +27,8 @@ if [[ "$change_counter" == "Y" || "$change_counter" == "y" ]]; then
     counter="$new_counter"
 
 else
-    # Increment the counter
-    new_counter=$((counter + 1))
+    # Read the current counter value
+    counter=$(cat "$COUNTER_FILE")
 fi
 
 # Get the current date and time
@@ -85,5 +85,7 @@ fi
 
 echo "Changes pushed successfully with commit message: $formatted_message"
 
+# Increment the counter
+new_counter=$((counter + 1))
 # Save the updated counter back to the file for future use
 echo "$new_counter" > "$COUNTER_FILE"

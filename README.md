@@ -22,7 +22,7 @@ python manage.py runserver
 ### Highlights of this project
 ---
 1. Cart
-2. Admin Panel | Shown only if logged as an Administrator
+2. Admin Panel | Shown for Administrator login only
 3. Login/Create Page | For all Users
 4. Wishlist
 5. Checkout

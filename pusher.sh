@@ -31,22 +31,8 @@ if [[ "$change_counter" == "Y" || "$change_counter" == "y" ]]; then
         echo "Invalid input. Commit Counter remains: C${counter}"
     fi
 else
-    # Ask if they want to use a temporary counter for this commit only
-    read -p "Do you want to temporarily set a different counter for this commit? [Y/N]? " temp_change
-
-    if [[ "$temp_change" == "Y" || "$temp_change" == "y" ]]; then
-        read -p "Enter temporary commit number: " temp_counter
-
-        # Validate that the input is a number
-        if [[ "$temp_counter" =~ ^[0-9]+$ ]]; then
-            echo "Using temporary commit number: C${temp_counter} for this commit only."
-            counter="$temp_counter"
-        else
-            echo "Invalid input. Commit Counter remains: C${counter}"
-        fi
-    else
-        echo "Using current commit counter: C${counter}"
-    fi
+    # Read the current counter value
+    counter=$(cat "$COUNTER_FILE")
 fi
 
 # Get the current date and time

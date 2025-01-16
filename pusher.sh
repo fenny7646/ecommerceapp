@@ -29,8 +29,6 @@ if [[ "$change_counter" == "Y" || "$change_counter" == "y" ]]; then
 else
     # Increment the counter
     new_counter=$((counter + 1))
-    # Save the updated counter back to the file for future use
-    echo "$new_counter" > "$COUNTER_FILE"
 fi
 
 # Get the current date and time
@@ -89,3 +87,6 @@ if ! git push -u "$selected_repo" main; then
 fi
 
 echo "Changes pushed successfully with commit message: $formatted_message"
+
+# Save the updated counter back to the file for future use
+echo "$new_counter" > "$COUNTER_FILE"

@@ -31,8 +31,10 @@ if [[ "$change_counter" == "Y" || "$change_counter" == "y" ]]; then
         echo "Invalid input. Commit Counter remains: C${counter}"
     fi
 else
-    # Read the current counter value
-    counter=$(cat "$COUNTER_FILE")
+    # Increment the counter
+    counter=$((counter + 1))
+    # Save the updated counter back to the file for future use
+    echo "$counter" > "$COUNTER_FILE"
 fi
 
 # Get the current date and time

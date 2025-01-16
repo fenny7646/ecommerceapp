@@ -32,7 +32,7 @@ else
 fi
 
 # Get the current date and time
-current_date=$(date +"%A, %B %d, %Y, %-I:%M %p %Z")
+current_date=$(date +"%B %d, %-I:%M %p")
 
 # Prompt for the commit message with the counter and date
 read -p "Enter the commit message [No: C${counter} | Date: ${current_date}]: " commit_message

@@ -1,4 +1,4 @@
-# E-commerce Web Application
+# Web Application | E-commerce
 ---
 
 ##### This is an Ecommerce Shopping Web Application, where users can search desired items, add them to wishlist or add to cart to checkout. Admins only can perform CRUD Ops of Products and its related images and also price. 
@@ -26,3 +26,8 @@ python manage.py runserver
 3. Login/Create Page | For all Users
 4. Wishlist
 5. Checkout
+
+### Future Commitements
+---
+1.Currently, You have to add all products from admin panel to shown products in categories.But, A JSON formated initial face with lots of products will be updated soon...
+2.This will be directly using PostgreSQL and coming soon...

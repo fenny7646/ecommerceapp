@@ -38,7 +38,7 @@ current_date=$(date +"%B %d,%-I:%M %p")
 read -p "Enter the commit message [No: C${counter} | Date: ${current_date}]: " commit_message
 
 # Format the commit message with autoincremented number and user input
-formatted_message="C${counter}|${current_date}|${commit_message}"
+formatted_message="C${counter} | ${current_date} | ${commit_message}"
 
 # Define an array of remote repositories and their values
 declare -A remote_values=( ["origin"]="" ["ecommerce"]=1 )

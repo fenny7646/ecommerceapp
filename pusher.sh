@@ -21,20 +21,16 @@ if [[ "$change_counter" == "Y" || "$change_counter" == "y" ]]; then
     # User wants to set a new counter for future commits
     read -p "Enter new commit number: " new_counter
 
-    # Validate that the input is a number
-    if [[ "$new_counter" =~ ^[0-9]+$ ]]; then
-        # Save the new counter value back to the file for future use
-        echo "$new_counter" > "$COUNTER_FILE"
-        echo "Commit Counter updated to: C${new_counter}"
-        counter="$new_counter"
-    else
-        echo "Invalid input. Commit Counter remains: C${counter}"
-    fi
+    # Save the new counter value back to the file for future use
+    echo "$new_counter" > "$COUNTER_FILE"
+    echo "Commit Counter updated to: C${new_counter}"
+    counter="$new_counter"
+
 else
     # Increment the counter
-    counter=$((counter + 1))
+    new_counter=$((counter + 1))
     # Save the updated counter back to the file for future use
-    echo "$counter" > "$COUNTER_FILE"
+    echo "$new_counter" > "$COUNTER_FILE"
 fi
 
 # Get the current date and time
